@@ -1,13 +1,14 @@
+from pathlib import Path
+
+import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-import matplotlib.pyplot as plt
-from pathlib import Path
 from PIL import Image
-from tensorflow.keras.preprocessing.image import load_img
 from sklearn.model_selection import train_test_split
-from tensorflow.keras.initializers import random_uniform, glorot_uniform, constant, identity
-from tensorflow.keras.layers import Dropout, Input, Add, Dense, Activation, BatchNormalization, Flatten, Conv2D, MaxPooling2D, GlobalMaxPooling2D
-from tensorflow.keras.models import Model, load_model
+from tensorflow.keras.initializers import glorot_uniform
+from tensorflow.keras.layers import Dropout, Input, Dense, BatchNormalization, Flatten, Conv2D, MaxPooling2D
+from tensorflow.keras.models import Model
+from tensorflow.keras.preprocessing.image import load_img
 
 path = Path("part1/")
 filenames = list(map(lambda x: x.name, path.glob('*.jpg')))
